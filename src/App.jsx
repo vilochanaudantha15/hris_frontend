@@ -40,7 +40,7 @@ function ProtectedRoute({ children }) {
       }
 
       try {
-        const res = await fetch('http://localhost:4000/employ/user', {
+        const res = await fetch('http://localhost:7000/employ/user', {
           headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`,
