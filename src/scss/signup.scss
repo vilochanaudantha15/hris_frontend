@@ -1,0 +1,235 @@
+// Variables
+$primary-color: #1976d2; // Updated to a professional blue
+$secondary-color: #1a2b3c; // Darker, professional navy
+$success-color: #2ecc71;
+$warning-color: #f39c12;
+$danger-color: #d32f2f; // Updated to a standard error red
+$light-gray: #f5f6fa; // Softer light gray
+$medium-gray: #b0bec5; // Neutral gray
+$dark-gray: #546e7a; // Professional dark gray
+$white: #ffffff;
+$shadow: 0 6px 20px rgba(0, 0, 0, 0.12); // Softer, professional shadow
+$glass-bg: rgba(255, 255, 255, 0.2);
+$glass-border: 1px solid rgba(255, 255, 255, 0.25);
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin glassmorphic {
+  background: $glass-bg;
+  backdrop-filter: blur(14px); // Enhanced blur for modern look
+  border: $glass-border;
+  border-radius: 16px;
+  box-shadow: $shadow;
+  padding: 32px; // Increased padding
+}
+
+// Signup Container
+.signup-container {
+  font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; // Professional font
+  color: $secondary-color;
+  background: linear-gradient(135deg, $light-gray, #dfe9f3); // Subtle gradient
+}
+
+// Card Styles
+.card {
+  @include glassmorphic;
+  padding: 40px; // Increased for spacious feel
+  max-width: 800px; // Increased width
+  margin: 0 auto;
+
+  .logo {
+    display: block;
+    margin: 0 auto 24px; // More spacing below logo
+  }
+
+  .section-title {
+    margin: 20px 0 12px;
+    color: $primary-color;
+    font-weight: 600;
+    font-size: 1.5rem; // Slightly larger for clarity
+    border-bottom: 2px solid $medium-gray;
+    padding-bottom: 10px;
+  }
+
+  .accordion {
+    background: $white;
+    border-radius: 10px;
+    box-shadow: $shadow;
+    margin-bottom: 24px; // Increased spacing
+
+    .accordion-summary {
+      background: $light-gray;
+      font-weight: 600;
+      color: $secondary-color;
+      padding: 12px 16px;
+
+      &:hover {
+        background: ($light-gray, 3%);
+      }
+    }
+
+    .accordion-details {
+      padding: 24px; // Increased padding
+      display: flex;
+      flex-direction: column;
+      gap: 24px; // Increased gap between fields
+    }
+  }
+
+  .form-control {
+    margin-bottom: 24px; // Increased spacing
+
+    .form-label {
+      color: $secondary-color;
+      font-weight: 500;
+      font-size: 1.1rem; // Slightly larger for readability
+      margin-bottom: 10px;
+    }
+
+    .text-field, .select {
+      background: $white;
+      border-radius: 8px;
+      font-size: 1rem;
+      padding: 14px; // Increased padding for comfort
+
+      &:focus {
+        border-color: $primary-color;
+        box-shadow: 0 0 0 4px rgba($primary-color, 0.15); // Softer focus ring
+      }
+    }
+
+    .error {
+      color: $danger-color;
+      font-size: 0.9rem;
+      margin-top: 8px;
+    }
+  }
+
+  .form-control-label {
+    color: $secondary-color;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .submit-btn {
+    background: $primary-color;
+    color: $white;
+    padding: 14px 28px; // Larger button
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: ($primary-color, 8%);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 12px rgba($primary-color, 0.25);
+    }
+  }
+
+  .google-btn {
+    border-color: $medium-gray;
+    color: $secondary-color;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 14px 28px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: $light-gray;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba($secondary-color, 0.2);
+    }
+
+    .google-icon {
+      display: inline-flex;
+      align-items: center;
+
+      svg {
+        width: 26px;
+        height: 26px;
+      }
+    }
+  }
+
+  .divider {
+    color: $dark-gray;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 28px 0;
+    text-align: center;
+  }
+
+  .link {
+    color: $primary-color;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+
+    &:hover {
+      text-decoration: underline;
+      color: ($primary-color, 8%);
+    }
+  }
+}
+
+// Responsive Adjustments
+@media (max-width: 800px) {
+  .signup-container {
+    padding: 20px;
+  }
+
+  .card {
+    padding: 28px;
+    max-width: 100%;
+    max-height: 90vh;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .accordion {
+    .accordion-summary {
+      font-size: 1rem;
+    }
+
+    .accordion-details {
+      padding: 16px;
+      gap: 20px;
+    }
+  }
+
+  .form-control {
+    .form-label {
+      font-size: 1rem;
+    }
+
+    .text-field, .select {
+      font-size: 0.95rem;
+      padding: 12px;
+    }
+
+    .error {
+      font-size: 0.85rem;
+    }
+  }
+
+  .submit-btn, .google-btn {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+
+  .form-control-label, .divider, .link {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,139 @@
+/* attendanceuploader.scss - Styles for AttendanceUploader component */
+
+/* Root container styles */
+.attendance-uploader-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Header section */
+.attendance-header {
+  margin-bottom: 1.5rem;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-primary, #000); /* Fallback to black */
+  }
+}
+
+/* Controls section (select, file input) */
+.attendance-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+
+  select,
+  input[type="file"] {
+    padding: 0.5rem;
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: 4px;
+    background-color: var(--background-paper, #fff);
+    color: var(--text-primary, #000);
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: var(--primary-main, #1976d2);
+    }
+
+    &:disabled {
+      background-color: var(--disabled-bg, #f5f5f5);
+      cursor: not-allowed;
+    }
+  }
+
+  input[type="file"] {
+    padding: 0.25rem; /* Adjust for file input */
+    cursor: pointer;
+
+    /* Style the file input button */
+    &::-webkit-file-upload-button {
+      background-color: var(--primary-main, #1976d2);
+      color: var(--primary-contrast-text, #fff);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: var(--primary-dark, #1565c0);
+      }
+    }
+  }
+}
+
+/* Table wrapper for responsiveness */
+.summary-table-wrapper {
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+/* Summary table styles */
+.roster-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--background-paper, #fff);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  th,
+  td {
+    border: 1px solid var(--border-color, #ddd);
+    padding: 0.75rem;
+    text-align: left;
+    font-size: 0.9rem;
+    color: var(--text-primary, #000);
+  }
+
+  th {
+    background-color: var(--table-header-bg, #f5f5f5);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  tbody tr {
+    &:hover {
+      background-color: var(--hover-bg, #f9f9f9);
+    }
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .attendance-controls {
+    flex-direction: column;
+    align-items: stretch;
+
+    select,
+    input[type="file"] {
+      width: 100%;
+    }
+  }
+
+  .roster-table {
+    th,
+    td {
+      padding: 0.5rem;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+/* Loading and error states */
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--text-primary, #000);
+  margin: 2rem 0;
+}
+
+.error {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 2rem 0;
+}

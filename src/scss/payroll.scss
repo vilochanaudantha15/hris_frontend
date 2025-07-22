@@ -1,0 +1,257 @@
+.payroll-container {
+  max-width: 1280px;
+  margin: 2rem auto;
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+  background: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+
+  .header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+
+    h2 {
+      color: #1e293b;
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+  }
+
+  .employee-select {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  }
+
+  .payroll-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+
+      .info-item {
+        padding: 1rem;
+        border-left: 4px solid #4f46e5;
+        background: #f3f4f6;
+
+        label {
+          color: #64748b;
+          font-size: 0.85rem;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+        }
+
+        p {
+          color: #1e293b;
+          font-size: 1rem;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 1rem;
+
+      .action-button {
+        padding: 0.5rem 1.5rem;
+        border-radius: 6px;
+        font-weight: 600;
+        transition: all 0.2s ease;
+
+        &.show-salary {
+          background: #4f46e5;
+          color: #ffffff;
+
+          &:hover {
+            background: #4338ca;
+          }
+        }
+
+        &.edit-payroll {
+          background: #9333ea;
+          color: #ffffff;
+
+          &:hover {
+            background: #7e22ce;
+          }
+        }
+      }
+    }
+  }
+
+  
+   .modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 800px;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e5e7eb;
+
+    h3 {
+      color: #1e293b;
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    .close-button {
+      padding: 0.25rem;
+      color: #64748b;
+
+      &:hover {
+        color: #dc2626;
+        background: #fee2e2;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .error-message {
+    color: #dc2626;
+    background: #fee2e2;
+    padding: 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .success-message {
+    color: #16a34a;
+    background: #d1fae5;
+    padding: 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+
+    .form-item {
+      margin-bottom: 1rem;
+
+      label {
+        color: #64748b;
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-bottom: 0.4rem;
+        display: block;
+
+        &:after {
+          content: '*';
+          color: #dc2626;
+          margin-left: 0.2rem;
+        }
+      }
+
+      .custom-input, .custom-select {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #d1d5db;
+        border-radius: 4px;
+        background: #f9fafb;
+        font-size: 0.95rem;
+        color: #1e293b;
+        transition: all 0.2s ease;
+
+        &:focus {
+          border-color: #3b82f6;
+          box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+          outline: none;
+        }
+
+        &:hover {
+          background: #f3f4f6;
+        }
+
+        &.disabled {
+          background: #e5e7eb;
+          color: #9ca3af;
+          cursor: not-allowed;
+        }
+      }
+
+      .custom-select {
+        appearance: none;
+        background: #f9fafb url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%233b82f6' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E") no-repeat right 0.5rem center;
+        padding-right: 1.5rem;
+      }
+    }
+  }
+
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+
+    .action-button {
+      padding: 0.5rem 1.25rem;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+
+      &.MuiButton-outlinedError {
+        border: 1px solid #dc2626;
+        color: #dc2626;
+        background: #ffffff;
+
+        &:hover {
+          background: #fee2e2;
+        }
+      }
+
+      &.MuiButton-containedPrimary {
+        background: #3b82f6;
+        color: #ffffff;
+
+        &:hover {
+          background: #2563eb;
+        }
+      }
+    }
+  }
+}
+}

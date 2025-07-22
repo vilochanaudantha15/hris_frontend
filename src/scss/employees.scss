@@ -1,0 +1,71 @@
+/* EmployeesTable.css */
+.MuiDataGrid-root {
+  font-family: Arial, sans-serif;
+  color: #000000;
+  border: 1px solid #34495e;
+  border-radius: 4px;
+}
+
+.MuiDataGrid-columnHeaders {
+  background-color: #f0f0f0;
+  font-weight: 600;
+}
+
+.MuiDataGrid-cell {
+  padding: 8px;
+}
+
+.MuiDataGrid-toolbarContainer {
+  padding: 10px;
+  background-color: #e8e8e8;
+}
+
+.MuiDataGrid-toolbarContainer button {
+  margin-right: 10px;
+  color: #000000;
+  background-color: #ffffff;
+  border: 1px solid #34495e;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+.MuiDataGrid-toolbarContainer button:hover {
+  background-color: #dcdcdc;
+}
+
+/* Style for profile pictures */
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #34495e;
+}
+
+/* Style for action buttons in the Actions column */
+.action-btn {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+}
+
+.update-btn {
+  background-color: #4CAF50; /* Green for Update */
+  color: #fff;
+}
+
+.update-btn:hover {
+  background-color: #45a049;
+}
+
+.delete-btn {
+  background-color: #ff4444; /* Red for Delete */
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background-color: #cc0000;
+}

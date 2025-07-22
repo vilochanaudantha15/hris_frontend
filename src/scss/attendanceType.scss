@@ -1,0 +1,53 @@
+.attendance-root {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+
+  .MuiCard-root {
+    position: relative;
+    overflow: hidden;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.3) 0%,
+        rgba(255, 255, 255, 0) 60%
+      );
+      pointer-events: none;
+    }
+
+    &.day {
+      background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+      color: white;
+      
+      .MuiTypography-root {
+        color: white !important;
+      }
+    }
+
+    &.executive {
+      background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
+      color: white;
+      
+      .MuiTypography-root {
+        color: white !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .attendance-root {
+    .MuiTypography-h2 {
+      font-size: 2rem !important;
+    }
+    
+    .MuiCardContent-root {
+      padding: 2rem !important;
+    }
+  }
+}

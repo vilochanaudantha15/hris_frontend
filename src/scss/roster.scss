@@ -1,0 +1,182 @@
+.roster-container {
+  padding: 20px;
+}
+
+.roster-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.approve-button {
+  background-color: #1976d2; // Material UI primary color
+  color: white;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #115293; // Darker shade
+  }
+
+  &:disabled {
+    background-color: #b0b0b0;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+}
+
+
+.roster-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.roster-table-wrapper {
+  overflow-x: auto;
+}
+
+.roster-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.roster-table th,
+.roster-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.roster-table th {
+  background-color: #f4f4f4;
+}
+
+.day-header {
+  &.sun, &.sat {
+    background-color: #f0f0f0;
+  }
+}
+
+.day-header {
+  &.sun { background-color: #ffebee; }
+  &.mon { background-color: #fff3e0; }
+  &.tue { background-color: #fffde7; }
+  &.wed { background-color: #f1f8e9; }
+  &.thu { background-color: #e8f5e9; }
+  &.fri { background-color: #e0f7fa; }
+  &.sat { background-color: #eceff1; }
+  &.holiday {
+    background-color: #c06060dd; /* Bright red for holidays */
+    color: #fff; /* White text for contrast */
+  }
+}
+
+.employee-row { 
+  &.color-0 { background-color: #ffe0b2; } 
+  &.color-1 { background-color: #ce93d8; } 
+  &.color-2 { background-color: #b2dfdb; } 
+  &.color-3 { background-color: #ffccbc; } 
+  &.color-4 { background-color: #b3e5fc; } 
+}
+
+.supervisor-name {
+  font-weight: bold;
+}
+
+.shift-cell {
+  min-width: 120px;
+  &.holiday {
+    background-color: #c06060dd; /* Bright red for holiday cells */
+    color: #fff; /* White text for contrast */
+  }
+}
+
+.shift-checkbox-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.shift-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.shift-checkbox input {
+  margin: 0;
+}
+
+.shift-checkbox span {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 20px;
+  color: #333;
+}
+
+.error {
+  color: red;
+}
+
+/* Dark mode styles */
+[data-mui-color-scheme="dark"] {
+  .roster-table th,
+  .roster-table td {
+    border-color: #444;
+  }
+
+  .roster-table th {
+    background-color: #333;
+  }
+
+  .day-header {
+    &.sun, &.sat {
+      background-color: #3a2f2f;
+    }
+
+    &.sun { background-color: #5d2a2a; }
+    &.mon { background-color: #5c3d1f; }
+    &.tue { background-color: #5b531f; }
+    &.wed { background-color: #3f4b2e; }
+    &.thu { background-color: #314b31; }
+    &.fri { background-color: #2e4a4d; }
+    &.sat { background-color: #3b3e40; }
+    &.holiday {
+      background-color: #9d4444d1; /* Darker red for holidays */
+      color: #fff;
+    }
+  }
+
+  .employee-row {
+    &.color-0 { background-color: #5c4623; }
+    &.color-1 { background-color: #4b2b4f; }
+    &.color-2 { background-color: #2f4b4a; }
+    &.color-3 { background-color: #5c3126; }
+    &.color-4 { background-color: #2f4b5c; }
+  }
+
+  .shift-cell.holiday {
+    background-color: #9d4444d1; /* Darker red for holiday cells */
+    color: #fff;
+  }
+
+  .loading, .error {
+    color: #ccc;
+  }
+
+  .error {
+    color: #ff6666;
+  }
+}
