@@ -20,7 +20,7 @@ import {
   Alert,
   Box,
 } from '@mui/material';
-import '../scss/executivesummary.scss';
+import '../scss/executiveSummary.scss';
 
 const ExecutiveSummary = () => {
   const [summary, setSummary] = useState([]);
