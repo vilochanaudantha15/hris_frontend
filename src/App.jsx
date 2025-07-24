@@ -43,10 +43,10 @@ function ProtectedRoute({ children }) {
       }
 
       try {
-        const res = await fetch(${API_BASE_URL}/user, {
+        const res = await fetch(`${API_BASE_URL}/user`, {
           headers: {
             'Content-Type': 'application/json',
-            Authorization: Bearer ${token},
+            Authorization: `Bearer ${token}`,
           },
         });
 
