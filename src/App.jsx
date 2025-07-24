@@ -26,6 +26,9 @@ import FinalAttendance from './components/FinalAttendance';
 import NonEfinalAttendance from './components/NonEfinalAttendance';
 import Payroll from './components/Payroll';
 
+// Define API base URL
+const API_BASE_URL = '/api';
+
 // ProtectedRoute component to restrict access to authenticated users with valid token
 function ProtectedRoute({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
@@ -40,10 +43,10 @@ function ProtectedRoute({ children }) {
       }
 
       try {
-        const res = await fetch('http://localhost:5355/employ/user', {
+        const res = await fetch(${API_BASE_URL}/user, {
           headers: {
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
+            Authorization: Bearer ${token},
           },
         });
 
@@ -97,8 +100,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
-
-              <Route
+            <Route
               path="/execetiveattendance"
               element={
                 <ProtectedRoute>
@@ -106,7 +108,6 @@ function App() {
                 </ProtectedRoute>
               }
             />
-
             <Route
               path="/attendanceType"
               element={
@@ -163,7 +164,6 @@ function App() {
                 </ProtectedRoute>
               }
             />
-
             <Route
               path="/userprofile"
               element={
@@ -180,7 +180,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
-                        <Route
+            <Route
               path="/salarytype"
               element={
                 <ProtectedRoute>
@@ -188,8 +188,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
-
-                        <Route
+            <Route
               path="/rosterlabourersalary"
               element={
                 <ProtectedRoute>
@@ -197,8 +196,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
-
-             <Route
+            <Route
               path="/labourerattendance"
               element={
                 <ProtectedRoute>
@@ -206,8 +204,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
-
-             <Route
+            <Route
               path="/addleave"
               element={
                 <ProtectedRoute>
@@ -215,7 +212,6 @@ function App() {
                 </ProtectedRoute>
               }
             />
-
             <Route
               path="/executivesummary"
               element={
@@ -224,7 +220,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
-             <Route
+            <Route
               path="/nonexecutivesummary"
               element={
                 <ProtectedRoute>
@@ -232,8 +228,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
-
-           <Route
+            <Route
               path="/finalattendance"
               element={
                 <ProtectedRoute>
@@ -241,8 +236,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
-
-             <Route
+            <Route
               path="/nonfinalattendance"
               element={
                 <ProtectedRoute>
@@ -250,8 +244,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
-
-             <Route
+            <Route
               path="/payroll"
               element={
                 <ProtectedRoute>
@@ -259,8 +252,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
-
-             <Route
+            <Route
               path="/loan"
               element={
                 <ProtectedRoute>
@@ -268,8 +260,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
-
-             <Route
+            <Route
               path="/telephoneBill"
               element={
                 <ProtectedRoute>
@@ -277,8 +268,6 @@ function App() {
                 </ProtectedRoute>
               }
             />
-
-
             {/* Redirect unknown routes to signin */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
