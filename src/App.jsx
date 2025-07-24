@@ -27,7 +27,7 @@ import NonEfinalAttendance from './components/NonEfinalAttendance';
 import Payroll from './components/Payroll';
 
 // Define API base URL
-const API_BASE_URL = '/employ';
+const API_BASE_URL = '/api';
 
 // ProtectedRoute component to restrict access to authenticated users with valid token
 function ProtectedRoute({ children }) {
