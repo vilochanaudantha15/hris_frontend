@@ -621,7 +621,7 @@ export default function SignUp(props) {
                   )}
                 </FormControl>
                 <FormControl>
-                  <FormLabel htmlFor="profile_pic">Profile Picture</FormLabel>
+                  <FormLabel htmlFor="profile_pic">Profile Picture (Optional)</FormLabel>
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
                     <Button
                       variant="outlined"
